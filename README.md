@@ -1,70 +1,120 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<br/>
+PROJECT URL : https://mytravel007.ccbp.tech/
+<br/>
 
-In the project directory, you can run:
+### Design Files
 
-### `npm start`
+<details>
+<summary>Click to view</summary>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/travel-guide-lg-output.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</details>
 
-### `npm test`
+### Set Up Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+<summary>Click to view</summary>
 
-### `npm run build`
+- Download dependencies by running `npm install`
+- Start up the app using `npm start`
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Completion Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+<summary>Functionality to be added</summary>
+<br/>
+The app must have the following functionalities
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When the app is opened initially,
 
-### `npm run eject`
+- An HTTP GET request should be made to **travelGuidePackagesApiUrl**
+- **<i>loader</i>** should be displayed while fetching the data
+- If the HTTP GET request made is successful, the list of packages should be displayed
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+</details>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<details>
+<summary>API Requests & Responses</summary>
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**travelGuidePackagesApiUrl**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**API**: `https://apis.ccbp.in/tg/packages`
 
-## Learn More
+**Method**: `GET`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Description**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Returns a response containing the list of packages
 
-### Code Splitting
+**Response**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
 
-### Analyzing the Bundle Size
+{
+    "packages":[
+        {
+        "id":1,
+        "name":"Best of Paris in 7 days tour",
+        "image_url":"https://assets.ccbp.in/frontend/react-js/travel-guide/paris-img.png",
+        "description":"Paris, France capital, is a major European city and a global centre for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine."
+        },
+        ...
+   ],
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
 
-### Making a Progressive Web App
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Important Note
 
-### Advanced Configuration
+<details>
+<summary>Click to view</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br/>
 
-### Deployment
+**The following instructions are required for the tests to pass**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- The image in each package item should have the alt as the value of the key `name` from each package object in the packages list
+- Wrap the Loader component with an HTML container element and add the `data-testid` attribute value as `loader` to it as shown below
 
-### `npm run build` fails to minify
+```jsx
+<div data-testid="loader">
+  <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
+</div>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
+
+### Resources
+
+<details>
+<summary>Colors</summary>
+
+<br/>
+
+<div style="background-color: #eef4f7; width: 150px; padding: 10px; color: black">Hex: #eef4f7</div>
+<div style="background-color: #334155; width: 150px; padding: 10px; color: white">Hex: #334155</div>
+<div style="background-color: #52bbf0; width: 150px; padding: 10px; color: black">Hex: #52bbf0</div>
+<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
+<div style="background-color: #475569; width: 150px; padding: 10px; color: white">Hex: #475569</div>
+<div style="background-color: #64748b; width: 150px; padding: 10px; color: white">Hex: #64748b</div>
+<br/>
+
+</details>
+
+<details>
+<summary>Font-families</summary>
+
+- Roboto
+
+</details>
+
+> ### _Things to Keep in Mind_
+>
+> - All components you implement should go in the `src/components` directory.
