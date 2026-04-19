@@ -1,6 +1,4 @@
 
-
-<br/>
 PROJECT URL : https://mytravel007.ccbp.tech/
 <br/>
 
@@ -24,18 +22,7 @@ PROJECT URL : https://mytravel007.ccbp.tech/
 
 ### Completion Instructions
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
-The app must have the following functionalities
 
-When the app is opened initially,
-
-- An HTTP GET request should be made to **travelGuidePackagesApiUrl**
-- **<i>loader</i>** should be displayed while fetching the data
-- If the HTTP GET request made is successful, the list of packages should be displayed
-
-</details>
 
 <details>
 <summary>API Requests & Responses</summary>
@@ -71,25 +58,7 @@ Returns a response containing the list of packages
 
 </details>
 
-### Important Note
 
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- The image in each package item should have the alt as the value of the key `name` from each package object in the packages list
-- Wrap the Loader component with an HTML container element and add the `data-testid` attribute value as `loader` to it as shown below
-
-```jsx
-<div data-testid="loader">
-  <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
-</div>
-```
-
-</details>
 
 ### Resources
 
